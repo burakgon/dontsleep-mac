@@ -1,0 +1,9 @@
+// The dontsleep command. It is built into the app, at Contents/Helpers/dontsleep.
+PRODUCT_NAME = dontsleep
+// The file system does not tell DontSleep from dontsleep, so the module needs another name.
+PRODUCT_MODULE_NAME = DontSleepCLI
+PRODUCT_BUNDLE_IDENTIFIER = com.burakgon.DontSleep.cli
+OTHER_CODE_SIGN_FLAGS = $(inherited) -i $(PRODUCT_BUNDLE_IDENTIFIER)
+
+// Only ever shipped inside the app.
+SKIP_INSTALL = YES

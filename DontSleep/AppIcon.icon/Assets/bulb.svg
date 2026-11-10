@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="glass" x1="0" y1="280" x2="0" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFBEA"/>
+      <stop offset="0.55" stop-color="#FFE08A"/>
+      <stop offset="1" stop-color="#FFB92E"/>
+    </linearGradient>
+  </defs>
+  <path d="M372.6 583.5A182 182 0 1 1 651.4 583.5C616.2 625.4 588.4 657.6 588.4 703H435.6C435.6 657.6 407.8 625.4 372.6 583.5Z" fill="url(#glass)"/>
+</svg>

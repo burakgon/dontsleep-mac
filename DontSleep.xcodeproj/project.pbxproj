@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D50000000000000000000B01 /* DontSleepKit in Frameworks */ = {isa = PBXBuildFile; productRef = D50000000000000000000D01 /* DontSleepKit */; };
+		D50000000000000000000B02 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = D50000000000000000000D02 /* Sparkle */; };
+		D50000000000000000000B03 /* dontsleep in Embed Command Line Tool */ = {isa = PBXBuildFile; fileRef = D50000000000000000000F02 /* dontsleep */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D50000000000000000000B11 /* DontSleepKit in Frameworks */ = {isa = PBXBuildFile; productRef = D50000000000000000000D11 /* DontSleepKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D50000000000000000000701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D50000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D50000000000000000000202;
+			remoteInfo = CLI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D50000000000000000000E04 /* Embed Command Line Tool */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Helpers;
+			dstSubfolderSpec = 1;
+			files = (
+				D50000000000000000000B03 /* dontsleep in Embed Command Line Tool */,
+			);
+			name = "Embed Command Line Tool";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D50000000000000000000F01 /* DontSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50000000000000000000F02 /* dontsleep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dontsleep; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50000000000000000000F03 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		D50000000000000000000F04 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D50000000000000000000F05 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D50000000000000000000F06 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		D50000000000000000000F07 /* App.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = App.xcconfig; sourceTree = "<group>"; };
+		D50000000000000000000F08 /* CLI.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CLI.xcconfig; sourceTree = "<group>"; };
+		D50000000000000000000F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D50000000000000000000A01 /* DontSleep */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DontSleep;
+			sourceTree = "<group>";
+		};
+		D50000000000000000000A02 /* CLI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CLI;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D50000000000000000000E02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50000000000000000000B01 /* DontSleepKit in Frameworks */,
+				D50000000000000000000B02 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50000000000000000000E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50000000000000000000B11 /* DontSleepKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D50000000000000000000101 = {
+			isa = PBXGroup;
+			children = (
+				D50000000000000000000A01 /* DontSleep */,
+				D50000000000000000000A02 /* CLI */,
+				D50000000000000000000103 /* Config */,
+				D50000000000000000000102 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D50000000000000000000102 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D50000000000000000000F01 /* DontSleep.app */,
+				D50000000000000000000F02 /* dontsleep */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D50000000000000000000103 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D50000000000000000000F03 /* Base.xcconfig */,
+				D50000000000000000000F04 /* Debug.xcconfig */,
+				D50000000000000000000F05 /* Release.xcconfig */,
+				D50000000000000000000F06 /* Version.xcconfig */,
+				D50000000000000000000F07 /* App.xcconfig */,
+				D50000000000000000000F08 /* CLI.xcconfig */,
+				D50000000000000000000F09 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D50000000000000000000201 /* DontSleep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50000000000000000000302 /* Build configuration list for PBXNativeTarget "DontSleep" */;
+			buildPhases = (
+				D50000000000000000000E01 /* Sources */,
+				D50000000000000000000E02 /* Frameworks */,
+				D50000000000000000000E03 /* Resources */,
+				D50000000000000000000E04 /* Embed Command Line Tool */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D50000000000000000000601 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D50000000000000000000A01 /* DontSleep */,
+			);
+			name = DontSleep;
+			packageProductDependencies = (
+				D50000000000000000000D01 /* DontSleepKit */,
+				D50000000000000000000D02 /* Sparkle */,
+			);
+			productName = DontSleep;
+			productReference = D50000000000000000000F01 /* DontSleep.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D50000000000000000000202 /* CLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50000000000000000000303 /* Build configuration list for PBXNativeTarget "CLI" */;
+			buildPhases = (
+				D50000000000000000000E11 /* Sources */,
+				D50000000000000000000E12 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D50000000000000000000A02 /* CLI */,
+			);
+			name = CLI;
+			packageProductDependencies = (
+				D50000000000000000000D11 /* DontSleepKit */,
+			);
+			productName = CLI;
+			productReference = D50000000000000000000F02 /* dontsleep */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D50000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2720;
+				LastUpgradeCheck = 2720;
+				TargetAttributes = {
+					D50000000000000000000201 = {
+						CreatedOnToolsVersion = 27.2;
+					};
+					D50000000000000000000202 = {
+						CreatedOnToolsVersion = 27.2;
+					};
+				};
+			};
+			buildConfigurationList = D50000000000000000000301 /* Build configuration list for PBXProject "DontSleep" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D50000000000000000000101;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D50000000000000000000C01 /* XCLocalSwiftPackageReference "Packages/DontSleepKit" */,
+				D50000000000000000000C02 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D50000000000000000000102 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D50000000000000000000201 /* DontSleep */,
+				D50000000000000000000202 /* CLI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D50000000000000000000E03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D50000000000000000000E01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D50000000000000000000E11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D50000000000000000000601 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D50000000000000000000202 /* CLI */;
+			targetProxy = D50000000000000000000701 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D50000000000000000000401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50000000000000000000F04 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D50000000000000000000402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50000000000000000000F05 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		D50000000000000000000403 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50000000000000000000F07 /* App.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D50000000000000000000404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50000000000000000000F07 /* App.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		D50000000000000000000405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50000000000000000000F08 /* CLI.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D50000000000000000000406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50000000000000000000F08 /* CLI.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D50000000000000000000301 /* Build configuration list for PBXProject "DontSleep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50000000000000000000401 /* Debug */,
+				D50000000000000000000402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D50000000000000000000302 /* Build configuration list for PBXNativeTarget "DontSleep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50000000000000000000403 /* Debug */,
+				D50000000000000000000404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D50000000000000000000303 /* Build configuration list for PBXNativeTarget "CLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50000000000000000000405 /* Debug */,
+				D50000000000000000000406 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D50000000000000000000C01 /* XCLocalSwiftPackageReference "Packages/DontSleepKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DontSleepKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D50000000000000000000C02 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D50000000000000000000D01 /* DontSleepKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DontSleepKit;
+		};
+		D50000000000000000000D02 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D50000000000000000000C02 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		D50000000000000000000D11 /* DontSleepKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DontSleepKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D50000000000000000000001 /* Project object */;
+}
