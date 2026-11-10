@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1
+
+- DontSleep starts afresh after the welcome, and no longer opens its menu by itself. The welcome
+  window took about 20 MB that the app then kept for as long as it ran; now it is back at about
+  13 MB a moment after you have chosen an icon.
+- An update that arrives while the welcome is on screen waits until it is closed.
+
 ## 1.0.0
 
 The first release.
