@@ -10,6 +10,7 @@ import AppKit
 ///     key down|up|left|right|return|space|escape
 ///     icon lightBulb|coffeeCup|...     wear another look in the menu bar
 ///     stage | unstage                  cover the screen with a plain backdrop, for pictures
+///     dismiss                          close the welcome, as its Done button would
 ///     frame                            print where the icon is on screen
 ///
 /// Release builds do not contain any of this.
@@ -59,6 +60,8 @@ final class DebugDriver {
             key(words.last ?? "")
         case "icon":
             if let style = words.last.flatMap(IconStyle.init) { menuBarItem.iconStyle = style }
+        case "dismiss":
+            NSApp.abortModal()
         case "stage":
             stage()
         case "unstage":

@@ -8,7 +8,8 @@ import Sparkle
 /// background; the app then restarts itself the next time that disturbs nobody. Sparkle
 /// sleeps between checks: it costs one timer that fires once a day.
 final class Updater: NSObject, SPUUpdaterDelegate, SPUStandardUserDriverDelegate {
-    /// Whether this is a bad moment to restart: the Mac is being kept awake, or the menu is open.
+    /// Whether this is a bad moment to restart: the Mac is being kept awake, or the menu
+    /// or the welcome is open.
     var isBusy: () -> Bool = { false }
 
     /// Called right before the app restarts to finish an update.
@@ -42,10 +43,13 @@ final class Updater: NSObject, SPUUpdaterDelegate, SPUStandardUserDriverDelegate
         controller?.checkForUpdates(nil)
     }
 
-    /// Restarts into an update that is downloaded and ready, unless that would interrupt something.
-    func installPendingUpdateIfIdle() {
-        guard let installPendingUpdate, !isBusy() else { return }
+    /// Restarts into an update that is downloaded and ready, unless that would interrupt
+    /// something. Says whether it did.
+    @discardableResult
+    func installPendingUpdateIfIdle() -> Bool {
+        guard let installPendingUpdate, !isBusy() else { return false }
         installPendingUpdate()
+        return true
     }
 
     // MARK: - SPUUpdaterDelegate

@@ -5,6 +5,7 @@ import AppKit
 ///
 /// It is a standard alert with a row of icons in it, which macOS lays out and draws. The
 /// icon in the menu bar changes as the choices are tried, so the preview is the real thing.
+/// Afterwards the app starts afresh, which gives back the memory all of this took.
 final class Welcome: NSObject {
     private let menuBarItem: MenuBarItem
     private let picker = NSSegmentedControl()

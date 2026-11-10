@@ -30,7 +30,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         self.menuBarItem = menuBarItem
 
         // An update waits for a moment when restarting disturbs nobody.
-        updater.isBusy = { [keepAwake, weak menuBarItem] in keepAwake.isActive || menuBarItem?.isMenuOpen == true }
+        updater.isBusy = { [keepAwake, weak self] in
+            keepAwake.isActive || self?.menuBarItem?.isMenuOpen == true || self?.welcome != nil
+        }
         updater.willRelaunch = { [keepAwake] in
             if keepAwake.isActive {
                 SessionHandover.save(end: keepAwake.endsAt, allowsDisplaySleep: keepAwake.allowsDisplaySleep)
@@ -68,14 +70,38 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func showMenuOrWelcome() {
         guard let menuBarItem, welcome == nil else { return }
-        if !hasWelcomed {
-            let welcome = Welcome(menuBarItem: menuBarItem)
-            self.welcome = welcome
-            welcome.run()
-            self.welcome = nil
-            hasWelcomed = true
+        guard !hasWelcomed else { return menuBarItem.showMenu() }
+        let welcome = Welcome(menuBarItem: menuBarItem)
+        self.welcome = welcome
+        welcome.run()
+        self.welcome = nil
+        hasWelcomed = true
+        startAfresh()
+    }
+
+    /// Ends this copy of the app and starts a new one in its place.
+    ///
+    /// To draw the welcome, AppKit loads everything a window needs and keeps it for as long
+    /// as the app runs: more than twice the memory the app uses otherwise. The welcome is
+    /// shown once in the life of the app, so the copy that showed it steps aside for one
+    /// that never loaded any of it. The icon is back in the menu bar a moment later.
+    private func startAfresh() {
+        // An update that arrived during the welcome restarts the app as well, into the new version.
+        if updater?.installPendingUpdateIfIdle() == true { return }
+        if keepAwake.isActive {
+            SessionHandover.save(end: keepAwake.endsAt, allowsDisplaySleep: keepAwake.allowsDisplaySleep)
         }
-        menuBarItem.showMenu()
+        // A shell waits for this copy to be gone, since two copies cannot run side by side,
+        // and then opens the app again without bringing it to the front.
+        let successor = Process()
+        successor.executableURL = URL(fileURLWithPath: "/bin/sh")
+        successor.arguments = [
+            "-c",
+            "while /bin/kill -0 \(ProcessInfo.processInfo.processIdentifier) 2>/dev/null; do /bin/sleep 0.1; done; /usr/bin/open -g \"$0\" --args --background",
+            Bundle.main.bundlePath,
+        ]
+        guard (try? successor.run()) != nil else { return }
+        NSApp.terminate(nil)
     }
 
     func applicationWillTerminate(_ notification: Notification) {
